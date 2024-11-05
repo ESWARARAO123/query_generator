@@ -32,5 +32,19 @@ def main():
             response=model.generate_content(formatted_template)
             sql_query=response.text
             st.write(sql_query)
+            #if we want the sample output
+            '''expected_output:
+            """
+            expected response from the query:
+            '''{sql_query}
+            
+            '''
+            sample table response:
+            """
+            expected_output_formatted=expected_output.format(sql_query=sql_query)
+            eoutput=model.generate_content(expected_output_formatted)
+            eoutput=eoutput.text
+            st.write(eoutput)'''
+            
 
 main()
